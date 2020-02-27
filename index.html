@@ -12,12 +12,18 @@
         <div class="product">
 
             <div class="product-image">
-                <img v-bind:src="image" alt="ayylmao">
+                <img :src="image" alt="ayylmao">
             </div>
 
             <div class="product-info">
                 <h1>{{ product }}</h1>
                 <p>{{ description }}</p>
+                <!--Los v-if quitan el elemento, mejor para cosas que no cambien mucho-->
+                <p v-if="inventory > 10">In Stock</p>
+                <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p> 
+                <p v-else>Out of Sotck</p>
+                <!--Luego los show solo lo ocultan, mejor para cosas dinamicas-->
+                <p v-show="inStock">ayylmao v-show</p>
             </div>
             
         </div>

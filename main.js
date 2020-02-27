@@ -3,6 +3,8 @@ var app = new Vue({
     data: {
         product: 'Socks',
         description: 'ayylmao',
-        image: './assets/vmSocks-green-onWhite.jpg'
+        image: './assets/vmSocks-green-onWhite.jpg',
+        inventory: 9,
+        inStock: false
     }
 })
